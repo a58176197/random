@@ -17,13 +17,17 @@ $(() => {
         console.log('按到了喔')
 
         var n = $('#inputNumber').val()
-
+        var x = 0
+        var count_x = 0
         var str = ''
         for (i = 1; i <= n; i++) {
-            str += rand(0, 1)
+            x = rand(0,1)
+            if(x==0) count_x += 1
+            str += x
             str += " "
         }
-
         $('#outputRandom').val(str)
+        $('#count_x').val(count_x)
+        $('#count_y').val(n-count_x)
     })
 })
